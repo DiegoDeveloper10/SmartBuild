@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartBuild", "SmartBuild\SmartBuild.csproj", "{D6089DA9-685A-4BF0-8CE4-0410FCB49508}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6089DA9-685A-4BF0-8CE4-0410FCB49508}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6089DA9-685A-4BF0-8CE4-0410FCB49508}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6089DA9-685A-4BF0-8CE4-0410FCB49508}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6089DA9-685A-4BF0-8CE4-0410FCB49508}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BD20EB28-BB1E-45B5-8CBF-C05E8D2EC099}
+	EndGlobalSection
+EndGlobal
