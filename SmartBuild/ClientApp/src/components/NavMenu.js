@@ -10,10 +10,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Collapse from '@material-ui/core/Collapse';
 //Icones
 import InboxIcon from '@material-ui/icons/MoveToInbox';
-import DraftsIcon from '@material-ui/icons/Drafts';
-import { ExpandLess, ExpandMore, Home, Person} from '@material-ui/icons';
-import StarBorder from '@material-ui/icons/StarBorder';
- 
+import { ExpandLess, ExpandMore, Home, Person, StarBorder } from '@material-ui/icons';
+
 
 const styles = theme => ({
     root: {
@@ -31,7 +29,7 @@ class NestedList extends Component {
 
     handleClick = () => {
         this.setState(state => ({ open: !state.open }));
-    };    
+    };
 
     render() {
         const { classes } = this.props;
@@ -41,18 +39,18 @@ class NestedList extends Component {
                 <List component="nav"
                 //subheader={<ListSubheader component="div">Nested List Items</ListSubheader>}
                 >
-                    <ListItem button>
+                    <ListItem button onClick={() => this.props.history.push("/")} >
                         <ListItemIcon>
                             <Home />
                         </ListItemIcon>
-                        <ListItemText inset primary="Home" onClick={() => this.props.history.push("/")} />
+                        <ListItemText primary="Home" />
                     </ListItem>
 
-                    <ListItem button>
+                    <ListItem button onClick={() => this.props.history.push("/Usuario")} >
                         <ListItemIcon>
                             <Person />
                         </ListItemIcon>
-                        <ListItemText inset primary="Usuario" onClick={() => this.props.history.push("/Usuario")} />
+                        <ListItemText inset primary="Usuario" />
                     </ListItem>
 
                     <ListItem button onClick={this.handleClick}>
@@ -75,10 +73,9 @@ class NestedList extends Component {
                     </Collapse>
 
                 </List>
-            </div>          
+            </div>
         );
     }
 }
-
 
 export default withRouter(withStyles(styles)(NestedList));
