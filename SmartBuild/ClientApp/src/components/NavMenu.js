@@ -1,9 +1,5 @@
 ﻿import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { Glyphicon, Nav, Navbar, NavItem } from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
-import './NavMenu.css';
-
+import { withRouter } from 'react-router-dom'
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import ListSubheader from '@material-ui/core/ListSubheader';
@@ -12,13 +8,12 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Collapse from '@material-ui/core/Collapse';
+//Icones
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import DraftsIcon from '@material-ui/icons/Drafts';
-import SendIcon from '@material-ui/icons/Send';
-import ExpandLess from '@material-ui/icons/ExpandLess';
-import ExpandMore from '@material-ui/icons/ExpandMore';
+import { ExpandLess, ExpandMore, Home, Person} from '@material-ui/icons';
 import StarBorder from '@material-ui/icons/StarBorder';
-
+ 
 
 const styles = theme => ({
     root: {
@@ -31,39 +26,35 @@ const styles = theme => ({
     },
 });
 
-class NestedList extends React.Component {
+class NestedList extends Component {
     state = { open: true };
 
     handleClick = () => {
         this.setState(state => ({ open: !state.open }));
-    };
-}
-
-export class NavMenu extends Component {
-    displayName = NavMenu.name
+    };    
 
     render() {
-
         const { classes } = this.props;
-        return (
 
+        return (
             <div className={classes.root}>
-                <List
-                    component="nav"
-                    subheader={<ListSubheader component="div">Nested List Items</ListSubheader>}
+                <List component="nav"
+                //subheader={<ListSubheader component="div">Nested List Items</ListSubheader>}
                 >
                     <ListItem button>
                         <ListItemIcon>
-                            <SendIcon />
+                            <Home />
                         </ListItemIcon>
-                        <ListItemText inset primary="Sent mail" />
+                        <ListItemText inset primary="Home" onClick={() => this.props.history.push("/")} />
                     </ListItem>
+
                     <ListItem button>
                         <ListItemIcon>
-                            <DraftsIcon />
+                            <Person />
                         </ListItemIcon>
-                        <ListItemText inset primary="Drafts" />
+                        <ListItemText inset primary="Usuario" onClick={() => this.props.history.push("/Usuario")} />
                     </ListItem>
+
                     <ListItem button onClick={this.handleClick}>
                         <ListItemIcon>
                             <InboxIcon />
@@ -71,6 +62,7 @@ export class NavMenu extends Component {
                         <ListItemText inset primary="Inbox" />
                         {this.state.open ? <ExpandLess /> : <ExpandMore />}
                     </ListItem>
+
                     <Collapse in={this.state.open} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
                             <ListItem button className={classes.nested}>
@@ -81,36 +73,12 @@ export class NavMenu extends Component {
                             </ListItem>
                         </List>
                     </Collapse>
-                </List>
-            </div>
 
-            //<Navbar inverse fixedTop fluid collapseOnSelect>
-            //  <Navbar.Header>
-            //    <Navbar.Brand>
-            //      <Link to={'/'}>Unimed</Link>
-            //    </Navbar.Brand>
-            //    <Navbar.Toggle />
-            //  </Navbar.Header>
-            //  <Navbar.Collapse>
-            //    <Nav>
-            //      <LinkContainer to={'/'} exact>
-            //        <NavItem>
-            //          <Glyphicon glyph='home' /> Home
-            //        </NavItem>
-            //      </LinkContainer>
-            //      <LinkContainer to={'/Usuario'}>
-            //        <NavItem>
-            //          <Glyphicon glyph='user' /> Usuário
-            //        </NavItem>
-            //      </LinkContainer>
-            //      <LinkContainer to={'/fetchdata'}>
-            //        <NavItem>
-            //          <Glyphicon glyph='th-list' /> Teste Lista
-            //        </NavItem>
-            //      </LinkContainer>
-            //    </Nav>
-            //  </Navbar.Collapse>
-            //</Navbar>
+                </List>
+            </div>          
         );
     }
 }
+
+
+export default withRouter(withStyles(styles)(NestedList));
