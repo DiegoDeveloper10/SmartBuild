@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartBuild", "SmartBuild\SmartBuild.csproj", "{D6089DA9-685A-4BF0-8CE4-0410FCB49508}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartBuild", "SmartBuild\SmartBuild.csproj", "{D6089DA9-685A-4BF0-8CE4-0410FCB49508}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartBuild.Model", "SmartBuild.Model\SmartBuild.Model.csproj", "{69006776-81E4-47CA-9E79-F03D1E0E78EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartBuild.DataAccess", "SmartBuild.DataAccess\SmartBuild.DataAccess.csproj", "{E31F0130-CC86-4D93-B0E8-088C038B6322}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{D6089DA9-685A-4BF0-8CE4-0410FCB49508}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6089DA9-685A-4BF0-8CE4-0410FCB49508}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6089DA9-685A-4BF0-8CE4-0410FCB49508}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69006776-81E4-47CA-9E79-F03D1E0E78EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69006776-81E4-47CA-9E79-F03D1E0E78EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69006776-81E4-47CA-9E79-F03D1E0E78EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69006776-81E4-47CA-9E79-F03D1E0E78EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E31F0130-CC86-4D93-B0E8-088C038B6322}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E31F0130-CC86-4D93-B0E8-088C038B6322}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E31F0130-CC86-4D93-B0E8-088C038B6322}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E31F0130-CC86-4D93-B0E8-088C038B6322}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
