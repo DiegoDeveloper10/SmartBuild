@@ -1,29 +1,56 @@
 import React, { Component } from 'react';
+import axios from "axios";
+import { ObterClasse, ListarUsuario } from "../../api/Usuario"
 
-export class Counter extends Component {
-    displayName = Counter.name
+export class Usuario extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { currentCount: 0 };
-        this.incrementCounter = this.incrementCounter.bind(this);
+        this.state = {
+            usuarios: [],
+            loading: true
+        };
+                
+
+        //axios
+        //    .get('api/usuarios/index')
+        //    .then(response => {
+        //        this.setState({
+        //            usuarios: response.data,
+        //            loading: false,
+        //        });
+        //    }).catch(response => {
+        //        console.log(response)
+        //    });
     }
 
-    incrementCounter() {
+    componentDidMount = async () => {
+        let response = await ObterClasse();
         this.setState({
-            currentCount: this.state.currentCount + 1
+            usuarios: response.data,
+            loading: false,
         });
     }
 
-    render() {
+
+    render = () =>{
+
+        let contents = this.state.loading ?
+            (<p><em>Carregando...</em></p>) : this.tabelaUsuario();
+
         return (
             <div>
-                Lista Usuário
-               
-                <p>Current count: <strong>{this.state.currentCount}</strong></p>
-
-                <button onClick={this.incrementCounter}>Increment</button>
+                <h1>Usuario</h1>
+                {contents}
             </div>
         );
     }
-}
+
+    tabelaUsuario() {
+        return (
+            <h1>Minha lista aqui</h1>
+        );
+    }
+
+};
+

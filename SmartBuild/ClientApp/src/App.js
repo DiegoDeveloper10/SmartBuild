@@ -3,7 +3,7 @@ import { Route } from 'react-router';
 import { Layout } from './components/Layout';
 import { Home } from './components/Home/Home';
 import { FetchData } from './components/FetchData';
-import { Counter } from './components/Usuario/Usuario';
+import { Usuario } from './components/Usuario/Usuario';
 
 export default class App extends Component {
     displayName = App.name
@@ -13,7 +13,7 @@ export default class App extends Component {
             <Layout>
 
                 <Route exact path='/' component={Home} />
-                <Route path='/usuario' component={Counter} />
+                <Route path='/usuario' component={Usuario} />
                 <Route path='/fetchdata' component={FetchData} />
             </Layout>
         );
